@@ -2,7 +2,7 @@
 
 API controllers:
 1) Feature calculate-price - calculates price using product id, tax number, coupon code
-2) Feature purchase - fix order with product id, tax number, coupon code and payment processor
+2) Feature purchase - make order with product id, tax number, coupon code and payment processor
 
 Technical features:
 1) Database integration
