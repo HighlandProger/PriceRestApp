@@ -14,7 +14,7 @@ class CouponUtilTest {
         String couponCode = "P100";
 
         Coupon expectedCoupon = Coupon.P100;
-        Coupon actualCoupon = CouponUtil.getCouponFromCouponCode(couponCode);
+        Coupon actualCoupon = CouponUtil.getCouponFromCouponCode(couponCode).orElseThrow();
 
         assertEquals(expectedCoupon, actualCoupon);
     }

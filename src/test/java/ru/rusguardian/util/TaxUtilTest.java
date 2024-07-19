@@ -30,12 +30,12 @@ class TaxUtilTest {
 
 
     @Test
-    void getTaxRateFromTaxNumber_shouldThrowExceptionForNotDigitsString() {
-        String taxNumber = "DE21gv35g3#@";
+    void getTaxRateFromTaxNumber_shouldThrowExceptionForWrongPatternString() {
+        String taxNumber = "DE1235g!6789";
 
         Exception e = assertThrows(CalculatePriceException.class, () -> TaxUtil.getTaxRateFromTaxNumber(taxNumber));
 
-        assertEquals("Tax number must contain only digits: " + taxNumber, e.getMessage());
+        assertEquals("Wrong pattern for country: Germany", e.getMessage());
     }
 
 }

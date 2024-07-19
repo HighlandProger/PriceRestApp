@@ -25,7 +25,7 @@ class ProcessCalculatePriceTest {
 
     @Test
     void process_shouldReturnCalculatedProcess() {
-        CalculatePriceDto dto = new CalculatePriceDto(1L, "GR3414532", "P10");
+        CalculatePriceDto dto = new CalculatePriceDto(1L, "GRYY123456789", "P10");
 
         when(productService.getProductById(dto.getProduct())).thenReturn(new Product(1L, "Iphone", 100L));
 
@@ -49,7 +49,9 @@ class ProcessCalculatePriceTest {
 
     @Test
     void process_shouldThrowCalculateException_whenCouponIncorrect() {
-        CalculatePriceDto dto = new CalculatePriceDto(1L, "DE3414532", "P20");
+        CalculatePriceDto dto = new CalculatePriceDto(1L, "DE123456789", "P20");
+
+        when(productService.getProductById(dto.getProduct())).thenReturn(new Product(1L, "Iphone", 100L));
 
         Exception e = assertThrows(CalculatePriceException.class, () -> processCalculatePrice.process(dto));
 
