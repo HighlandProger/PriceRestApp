@@ -10,3 +10,11 @@ Technical features:
 3) Different coupon sale types (fix and percent)
 4) Tax calculate by tax number and price
 5) 2 payment processors types
+
+
+Launch instructions
+1) download Docker on your system
+2) download project
+3) change directory to /docker
+4) launch launch.sh in terminal "sh launch.sh" (for Linux or GitBash)
+5) Note that you need to have launched postgresql with credentials described in application.yaml and at least one row in table main.products
