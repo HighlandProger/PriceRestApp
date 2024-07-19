@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/price-rest-app?currentSchema=main
+    username: price-rest-app
+    password: price-rest-app
+
+    hikari:
+      connectionTimeout: 30000
+      minimumIdle: 5
+      maximumPoolSize: 20
+    jpa:
+      properties:
+        hibernate:
+          max_fetch_depth: 3
+          dialect: org.hibernate.dialect.PostgreSQL9Dialect
+          hbm2ddl:auto: update
+          cache:
+            provider_class: org.hibernate.cache.NoCacheProvider"
+            use_query_cache: false
+            use_minimal_puts: false
+      database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+      show-sql: true

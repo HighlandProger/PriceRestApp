@@ -1,7 +1,6 @@
-package ru.rusguardian.processor;
+package ru.rusguardian.service.processor;
 
 import org.springframework.stereotype.Service;
-import ru.rusguardian.controller.dto.CalculatePriceDto;
 import ru.rusguardian.controller.dto.PurchaseDto;
 
 @Service
