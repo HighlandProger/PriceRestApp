@@ -36,8 +36,8 @@ public class PaymentController {
     @PostMapping("/purchase")
     public ResponseEntity<?> purchase(@RequestBody PurchaseDto dto) {
         try {
-            processPurchase.process(dto);
-            return ResponseEntity.ok("Purchased successfully");
+            boolean isPurchased = processPurchase.process(dto);
+            return ResponseEntity.ok(isPurchased);
         } catch (PurchaseException e) {
             log.error("Error during price calculation: {}", e.getMessage());
             return ResponseEntity.badRequest().body(new ErrorMessageDto(e.getMessage()));
